@@ -1,24 +1,18 @@
 # FastXmlExrmRepro
 
-**TODO: Add description**
+https://github.com/processone/fast_xml/issues/10
 
-## Installation
+## Repro
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+```bash
+MIX_ENV=prod mix do deps.get, compile, release
+ls rel/fast_xml_exrm_repro/lib
+```
 
-  1. Add `fast_xml_exrm_repro` to your list of dependencies in `mix.exs`:
+### Expected
 
-    ```elixir
-    def deps do
-      [{:fast_xml_exrm_repro, "~> 0.1.0"}]
-    end
-    ```
+`p1_utils` should be included in lib
 
-  2. Ensure `fast_xml_exrm_repro` is started before your application:
+### Actual
 
-    ```elixir
-    def application do
-      [applications: [:fast_xml_exrm_repro]]
-    end
-    ```
-
+`p1_utils` is not included in lib
